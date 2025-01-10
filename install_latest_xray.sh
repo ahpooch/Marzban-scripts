@@ -83,7 +83,7 @@ download_xray() {
     fi
     
     echo "Downloading Xray archive: $DOWNLOAD_LINK"
-    if ! curl -RL -H 'Cache-Control: no-cache' -o "$ZIP_FILE" "$DOWNLOAD_LINK"; then
+    if ! curl -RL -H 'Cache-Control: no-cache' -o "$ZIP_FILE" "$DOWNLOAD_LINK" --insecure; then
         echo 'error: Download failed! Please check your network or try again.'
         return 1
     fi
